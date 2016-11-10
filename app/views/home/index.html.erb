@@ -15,6 +15,13 @@ User.find(1)<!DOCTYPE html>
 <% if user_signed_in? %>
 <%= link_to 'Профиль пользователя', user_root_path %>
 <% end %>
-
 </body>
 </html>
+
+    <% @homes.each do |home| %>
+      <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+      <%= link_to (image_tag home.image.url(:medium), class: 'image'), home %>
+        </div>
+        </div>
+        <% end %>
